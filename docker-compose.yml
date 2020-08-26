@@ -1,0 +1,22 @@
+version: '3'
+services:
+  web:
+    image: osiolabs/drupaldevwithdocker-php
+    ports:
+      - "8096:80"
+    volumes:
+      - ./docroot:/var/www/html:cached
+  db:
+    image: osiolabs/drupaldevwithdocker-mysql
+    ports:
+      - "3396:3306"
+    volumes:
+      - ./db-backups:/var/mysql/backups:delegated
+    env_file:
+      - ./docker.env
+  pma:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8097:80"
+    env_file:
+      - ./docker.env
