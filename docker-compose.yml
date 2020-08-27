@@ -7,7 +7,7 @@ services:
     volumes:
       - ./docroot:/var/www/html:cached
   db:
-    image: osiolabs/drupaldevwithdocker-mysql
+    image: osiolabs/drupaldevwithdocker-mysql:10.3
     ports:
       - "3396:3306"
     volumes:
