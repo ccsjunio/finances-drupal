@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: osiolabs/drupaldevwithdocker-php
+    image: osiolabs/drupaldevwithdocker-php:7.4
     ports:
       - "8096:80"
     volumes:
